@@ -10,8 +10,8 @@
   <!--breadcrumbs-->
     <div id="content-header">
       <div id="breadcrumb"> <a href="hal_admin" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Dashboard</a> <a href="kel_barberman" class="current">Barberman</a> </div>
-      <h1>Kelola Barberman</h1>
-      <button class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="datatable-buttons" data-toggle="modal" data-target="#tamBarber" style="margin-left:20px"><span>Tambah Barberman</span></buttons>
+      <h1>Name of Barber's</h1>
+      <button class="btn btn-default buttons-print btn-sm" tabindex="0" aria-controls="datatable-buttons" data-toggle="modal" data-target="#tamBarber" style="margin-left:20px"><span>+ Add New Barber</span></buttons>
       </div>
 
   <!--End-breadcrumbs-->
@@ -23,16 +23,16 @@
         <div class="span12">
           <div class="widget-box">
             <div class="widget-title"> <span class="icon"><i class="icon-th"></i></span>
-              <h5>Data barberman</h5>
+              <h5>List of Barber's</h5>
             </div>
             <div class="widget-content nopadding">
               <table class="table table-bordered data-table">
                 <thead>
                   <tr>
                     <th style="width:10%">No</th>
-                    <th style="width:40%">Nama</th>
-                    <th style="width:30%">Foto</th>
-                    <th style="width:20%">Aksi</th>
+                    <th style="width:40%">Name</th>
+                    <th style="width:30%">Image</th>
+                    <th style="width:20%">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -45,8 +45,10 @@
                     <td style="text-align:center"><?php echo $value['nama_barber']; ?></td>
                     <td style="text-align:center"><img src="<?php echo base_url();?>assets/images/barberman/<?php echo $value['foto_barber']; ?>" width="75px" height="75px"></td>
                     <td class="center" style="text-align:center">
+                      
                       <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#edit<?php echo $value['id_barberman'] ?>"><i class="fa fa-pencil"></i> Edit </button>
-                      <a href="kel_barberman/hapBarber?id=<?php echo $value['id_barberman']?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus </a>
+
+                      <a href="kel_barberman/hapBarber?id=<?php echo $value['id_barberman']?>" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remove </a>
                     </td>
                   </tr>
                   <?php $i++;} ?>
